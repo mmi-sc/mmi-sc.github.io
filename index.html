@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>(株)マン・マシンインターフェース / HOME</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" id="favicon" />
+  <link rel="stylesheet" href="css/bulma-custom.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+  <link rel="stylesheet" href="css/sitelocal.css">
+</head>
+
+<body>
+  <nav id="navigation" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="images/logo_alpha_name.png">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item has-text-weight-bold" href="index.html">HOME</a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="pages/company.html">企業情報</a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="pages/outline.html">会社概要</a>
+            <a class="navbar-item" href="pages/principle.html">企業方針</a>
+            <a class="navbar-item" href="pages/history.html">沿革</a>
+            <a class="navbar-item" href="pages/access.html">アクセス</a>
+            <a class="navbar-item" href="pages/lduinfo.html">公開情報</a>
+            <a class="navbar-item" href="pages/privacy.html">プライバシーポリシー</a>
+          </div>
+        </div>
+
+        <a class="navbar-item" href="pages/techinfo.html">技術情報</a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="pages/eco.html">環境活動</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="pages/environment.html">環境方針</a>
+          </div>
+        </div>
+
+        <a class="navbar-item" href="pages/jobs.html">採用情報</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="pages/support.html">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+  <!-- hero image -->
+  <section class="hero" style="background: url('images/maru3_7.jpg') center / cover;">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title mt-6">
+          <p><br /></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- slogan -->
+  <section class="section">
+    <div class="container">
+      <div class="tile is-ancestor is-vertical">
+        <div class="tile is-parent is-12 notification is-info is-vertical">
+          <article class="tile is-child is-size-3-desktop is-size-5-mobile is-italic">
+            <p>
+              人（MAN）と
+            </p>
+            <p style="text-indent: 1em;">
+              機械（MACHINE）をつなぐ
+            </p>
+            <p style="text-indent: 2em;">
+              かけはし（INTERFACE）になる
+            </p>
+          </article>
+          <article class="tile is-child">
+            <p class="has-text-black" style="text-indent: 1em;">
+              私たちは、社名の由来でもあるこの志を胸に、日々ソフトウェアの開発・改良に取り組んでいます。
+            </p>
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-6">
+            <a class="twitter-timeline" href="https://twitter.com/_M_M_I_" data-widget-id="499481748036526080">@_M_M_I_
+              からのツイート</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+          </article>
+          <article class="tile is-child notification">
+            <div id="fb-root"></div>
+            <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like-box"
+              data-href="https://www.facebook.com/pages/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%83%9E%E3%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9/503152396497579"
+              data-width="400" data-height="400" data-colorscheme="light" data-show-faces="true" data-header="false"
+              data-stream="false" data-show-border="true">
+          </article>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Copyright &copy; MAN MACHINE INTERFACE,INC. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+
+  </script>
+  <div id="page_top"><a href="#navigation">
+    </a></div>
+</body>
+
+</html>

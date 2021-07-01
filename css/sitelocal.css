@@ -1,0 +1,73 @@
+
+body {
+  color: black !important;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page_top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #3f98ef;
+  opacity: 0.6;
+}
+#page_top a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.media-content {
+  color: black !important;
+}
+
+/* hyperlinkされた要素にマウスを乗せたら透明度を下げる */
+.is-clickable:hover {
+  opacity: 0.75;
+}
+
+.is-text-shadowed
+{
+  text-shadow: 5px 5px 3px gray;
+}
+
+.horizontal-centered
+{
+  margin:0 auto;
+}
+
+ol.list-parenthes {
+  counter-reset: list;
+}
+ol.list-parenthes > li {
+  list-style: none;
+}
+ol.list-parenthes > li:before {
+  content: "(" counter(list) ") ";
+  counter-increment: list;
+}
