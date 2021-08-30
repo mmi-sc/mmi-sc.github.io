@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    overflow: hidden;
+    opacity: 1;
+}
+
+#noscript {
+    background: #000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.noscript-box {
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    font-size: 0.8rem;
+    color: #a28a3d;
+}
+
+.noscript-box img {
+width: 50%;
+max-width: 300px;
+}
