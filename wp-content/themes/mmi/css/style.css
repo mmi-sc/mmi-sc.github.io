@@ -508,7 +508,7 @@ ul.sub-menu li ul.sub-menu li {
     display: block;
     content: '';
     top: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: #fff;
   }
@@ -707,7 +707,7 @@ ul.sub-menu li ul.sub-menu li {
     height: 56px;
   }
   .pickup-navi ul li {
-    width: 50%;
+    width: 100%;
     height: 56px;
     text-align: center;
     margin: 0;
@@ -725,7 +725,7 @@ ul.sub-menu li ul.sub-menu li {
     align-items: center;
   }
   .pickup-navi ul li:first-child {
-    border-right: solid 1px #3298dc;
+    /* border-right: solid 1px #3298dc; */
   }
   #content {
     padding-top: 124px;
