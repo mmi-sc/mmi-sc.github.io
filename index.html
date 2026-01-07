@@ -147,15 +147,41 @@
 
 <div id="content" class="site-content">
 <div class="first-view pos-re">
-  <div class="page-width pos-ab-c">
-    <p class="first-1 animated invisible ease-in-out" data-animate="fadeInRightSmall"><img src="/wp-content/themes/mmi/images/front-title1.svg" alt=""></p>
-    <p class="first-2 animated invisible delay-01s ease-in-out" data-animate="fadeInRightSmall"><img src="/wp-content/themes/mmi/images/front-title2.svg" alt=""></p>
-	<p class="first-3 animated invisible delay-02s ease-in-out" data-animate="fadeInRightSmall"><img
-			src="/wp-content/themes/mmi/images/front-title3.svg" alt=""></p>
-	<div class="first-catch animated invisible delay-02s" data-animate="fadeInUp">
-		<p>私たちは、社名の由来でもあるこの志を胸に、<br>日々ソフトウェアの開発・改良に取り組んでいます。</p>
-	</div>
-	</div>
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <div class="slide active">
+        <div class="page-width pos-ab-c">
+          <p class="first-1 animated invisible ease-in-out" data-animate="fadeInRightSmall"><img src="/wp-content/themes/mmi/images/front-title1.svg" alt=""></p>
+          <p class="first-2 animated invisible delay-01s ease-in-out" data-animate="fadeInRightSmall"><img src="/wp-content/themes/mmi/images/front-title2.svg" alt=""></p>
+          <p class="first-3 animated invisible delay-02s ease-in-out" data-animate="fadeInRightSmall"><img src="/wp-content/themes/mmi/images/front-title3.svg" alt=""></p>
+          <div class="first-catch animated invisible delay-02s" data-animate="fadeInUp">
+            <p>私たちは、社名の由来でもあるこの志を胸に、<br>日々ソフトウェアの開発・改良に取り組んでいます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="page-width pos-ab-c">
+          <h2>スライド2 - ダミーコンテンツ</h2>
+          <div class="first-catch">
+            <p>ここに新しいコンテンツが入ります。<br>現在はダミーテキストです。</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="page-width pos-ab-c">
+          <h2>スライド3 - ダミーコンテンツ</h2>
+          <div class="first-catch">
+            <p>ここにも新しいコンテンツが入ります。<br>現在はダミーテキストです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button class="nav-dot active" data-slide="0"></button>
+      <button class="nav-dot" data-slide="1"></button>
+      <button class="nav-dot" data-slide="2"></button>
+    </div>
+  </div>
 </div>
 <div class="page-width">
   <div class="flex col2 sbw aic">
@@ -189,7 +215,47 @@
   </div>
 </div>
 </noscript>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script type="text/javascript" src="/wp-content/themes/mmi/js/common.js?210817-0607"></script><script type="text/javascript" src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" id="regenerator-runtime-js"></script><script type="text/javascript" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script><script type="text/javascript" id="contact-form-7-js-extra">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  let currentSlide = 0;
+  const totalSlides = 3;
+  const slideInterval = 5000;
+  
+  function showSlide(index, instant = false) {
+    const duration = instant ? 0 : 500;
+    $('.slider-wrapper').css({
+      'transition': instant ? 'none' : 'transform 0.5s ease-in-out',
+      'transform': `translateX(-${index * 33.333}%)`
+    });
+    
+    $('.slide').removeClass('active');
+    $('.nav-dot').removeClass('active');
+    $('.slide').eq(index % totalSlides).addClass('active');
+    $('.nav-dot').eq(index % totalSlides).addClass('active');
+  }
+  
+  function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+    
+    // 最後のスライドの後、瞬時に最初に戻る
+    if (currentSlide >= totalSlides) {
+      setTimeout(() => {
+        currentSlide = 0;
+        showSlide(currentSlide, true);
+      }, 500);
+    }
+  }
+  
+  $('.nav-dot').click(function() {
+    currentSlide = $(this).data('slide');
+    showSlide(currentSlide);
+  });
+  
+  setInterval(nextSlide, slideInterval);
+});
+</script><script type="text/javascript" src="/wp-content/themes/mmi/js/common.js?210817-0607"></script><script type="text/javascript" src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" id="regenerator-runtime-js"></script><script type="text/javascript" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script><script type="text/javascript" id="contact-form-7-js-extra">
 /* <![CDATA[ */
 var wpcf7 = {"api":{"root":"https:\/\/www.mmi-sc.co.jp\/wp-json\/","namespace":"contact-form-7\/v1"}};
 /* ]]> */
