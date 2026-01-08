@@ -557,6 +557,24 @@ ul.sub-menu li ul.sub-menu li {
   .slide-content p {
     font-size: 1.8rem !important;
   }
+  .slide-3 h2 {
+    font-size: 2.5rem !important;
+  }
+  .slide-3 p {
+    font-size: 1.8rem !important;
+  }
+  .slide-3 .aws-badges img {
+    height: 180px !important;
+    transition: transform 0.3s ease;
+  }
+  .slide-3 .aws-badges img:hover {
+    transform: scale(1.05);
+  }
+  .slide-3 a:hover h2,
+  .slide-3 a:hover p {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
   .aws-badges {
     position: static !important;
     display: flex !important;
@@ -953,6 +971,9 @@ a.table-btn {
   }
   .aws-badges img {
     height: 50px !important;
+  }
+  .slide-3 .aws-badges img {
+    height: 84px !important;
   }
 }
 @media screen and (max-width:480px) {
