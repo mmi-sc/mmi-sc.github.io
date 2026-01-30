@@ -564,7 +564,8 @@ ul.sub-menu li ul.sub-menu li {
     font-size: 1.8rem !important;
   }
   .slide-3 .aws-badges img {
-    height: 180px !important;
+    max-height: 120px;
+    width: auto;
     transition: transform 0.3s ease;
   }
   .slide-3 .aws-badges img:hover {
@@ -972,8 +973,13 @@ a.table-btn {
   .aws-badges img {
     height: 50px !important;
   }
-  .slide-3 .aws-badges img {
+  .slide-3 .aws-badges .product-image {
     height: 84px !important;
+    width: auto !important;
+  }
+  .slide-3 .aws-badges .marketplace-logo {
+    height: 42px !important;
+    width: auto !important;
   }
 }
 @media screen and (max-width:480px) {
