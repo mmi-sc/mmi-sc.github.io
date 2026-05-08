@@ -31,7 +31,7 @@ function footer() {
     '<li id="menu-item-688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-688"><a href="/recruit/">採用情報</a></li>',
     '     </ul>',
     '<ul class="sns-link">',
-    '<li><a style="width: 60px;" href="https://twitter.com/_M_M_I_" target="_blank"><i class="fab fa-twitter"></i></a></li>',
+    '<li><a style="width: 60px;" href="https://x.com/_M_M_I_" target="_blank" rel="noopener" aria-label="X (旧 Twitter)"><i class="fab fa-x-twitter"></i></a></li>',
     '    <li><a style="width: 60px;" href="https://www.facebook.com/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%83%9E%E3%83%B3%E3%83%9E%E3%82%B7%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-503152396497579/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>',
     '          </ul>',
     '</div>',
