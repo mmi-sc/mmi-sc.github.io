@@ -167,6 +167,47 @@
 
   <!-- #page -->
 
+  <script>
+    // トップページのジャンボトロンスライダー（自動再生 + ナビドット）。
+    // <head> でローカル読み込みされる /wp-includes/js/jquery/jquery.min.js は
+    // WordPress 同梱版で noConflict 済みなので、`$` ではなく `jQuery` を使い、
+    // ready コールバック内で `$` を別名として受け取る。
+    jQuery(document).ready(function ($) {
+      let currentSlide = 0;
+      const totalSlides = 3;
+      const slideInterval = 5000;
+
+      function showSlide(index, instant = false) {
+        $('.slider-wrapper').css({
+          'transition': instant ? 'none' : 'transform 0.5s ease-in-out',
+          'transform': `translateX(-${index * 33.333}%)`
+        });
+        $('.slide').removeClass('active');
+        $('.nav-dot').removeClass('active');
+        $('.slide').eq(index % totalSlides).addClass('active');
+        $('.nav-dot').eq(index % totalSlides).addClass('active');
+      }
+
+      function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+        // 最後のスライドの後、瞬時に最初に戻る
+        if (currentSlide >= totalSlides) {
+          setTimeout(() => {
+            currentSlide = 0;
+            showSlide(currentSlide, true);
+          }, 500);
+        }
+      }
+
+      $('.nav-dot').click(function () {
+        currentSlide = $(this).data('slide');
+        showSlide(currentSlide);
+      });
+
+      setInterval(nextSlide, slideInterval);
+    });
+  </script>
   <script src="/common/js/footer-scripts.js"></script>
 </body>
 
