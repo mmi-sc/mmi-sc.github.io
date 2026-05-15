@@ -1,0 +1,29 @@
+{
+  "indent_size": 2,
+  "indent_char": " ",
+  "indent_with_tabs": false,
+  "end_with_newline": true,
+  "preserve_newlines": true,
+  "max_preserve_newlines": 2,
+  "wrap_line_length": 0,
+  "eol": "\n",
+
+  "html": {
+    "indent_inner_html": false,
+    "wrap_attributes": "auto",
+    "extra_liners": ["head", "body", "/html"],
+    "unformatted": ["pre", "code"],
+    "content_unformatted": ["script", "style", "pre", "textarea"]
+  },
+
+  "css": {
+    "selector_separator_newline": true,
+    "newline_between_rules": true
+  },
+
+  "js": {
+    "space_after_anon_function": true,
+    "jslint_happy": false,
+    "brace_style": "collapse"
+  }
+}

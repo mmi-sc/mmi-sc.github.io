@@ -1,0 +1,13 @@
+{
+  "name": "mmi-sc-website",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Source for https://www.mmi-sc.co.jp (GitHub Pages)",
+  "scripts": {
+    "format": "node scripts/format.mjs",
+    "format:check": "node scripts/format.mjs --check"
+  },
+  "devDependencies": {
+    "js-beautify": "^1.15.1"
+  }
+}

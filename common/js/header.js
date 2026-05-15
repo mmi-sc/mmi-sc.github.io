@@ -1,0 +1,83 @@
+// 全ページ共通のヘッダー（マストヘッド）を出力する。
+// `<body>` 直後（lead-nurture トラッキングスクリプトの後ろ）で同期的に
+// `<script>header({ titleTag: 'h1' })</script>` のように呼び出すこと。
+// document.write を使うので defer / async 不可。
+//
+// titleTag: トップページのみ 'h1'、それ以外は省略（既定 'p'）。
+// 現在ページ強調のクラス（current-menu-item など）は付けない。
+// 後続の nav-active.js が location.pathname を見て付与する。
+function header(opts) {
+  opts = opts || {};
+  var titleTag = opts.titleTag === "h1" ? "h1" : "p";
+  document.write(
+    '<div id="page" class="site">',
+    '<header id="masthead" class="site-header">',
+    '<div class="page-width1200 pos-re">',
+    '<div class="site-branding">',
+    '<a href="/" class="custom-logo-link" rel="home">',
+    '<img src="/wp-content/uploads/2021/07/logo-n.svg" class="custom-logo" alt="株式会社マン・マシンインターフェース">',
+    "</a>",
+    "<" + titleTag + ' class="site-title"><a href="/" rel="home">株式会社マン・マシンインターフェース</a></' + titleTag + ">",
+    '<p class="site-description">人（MAN）と機械（MACHINE）をつなぐかけはし（INTERFACE）になる。私たちは、社名の由来でもあるこの志を胸に、日々ソフトウェアの開発・改良に取り組んでいます。</p>',
+    "</div>",
+    '<div class="nav-button-wrap">',
+    '<div class="nav-button"><span></span><span></span><span></span></div>',
+    "</div>",
+    '<nav id="navi" class="navi" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">',
+    '<div id="navi-in" class="navi-in">',
+    '<ul class="flex jcc">',
+    '<li id="menu-item-15" class="nav-top menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a href="/">トップページ</a></li>',
+    '<li id="menu-item-88" class="nav-company menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-88">',
+    '<a href="/about/">企業情報</a>',
+    '<ul class="sub-menu">',
+    '<li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-277">',
+    '<a href="/about/">企業情報</a>',
+    '<ul class="sub-menu">',
+    '<li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="/about/outline/">会社概要</a></li>',
+    '<li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="/about/principle/">企業方針</a></li>',
+    '<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="/about/history/">沿革</a></li>',
+    '<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="/about/access/">アクセス</a></li>',
+    "</ul>",
+    "</li>",
+    '<li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="/about/lduinfo/">公開情報</a></li>',
+    '<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="/about/privacy/">プライバシーポリシー</a></li>',
+    "</ul>",
+    "</li>",
+    '<li id="menu-item-97" class="nav-techinfo menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97">',
+    '<a href="/techinfo/">技術情報</a>',
+    '<ul class="sub-menu">',
+    '<li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-476">',
+    '<a href="/techinfo/">技術情報</a>',
+    '<ul class="sub-menu">',
+    '<li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="/techinfo/ee-division/">組込みエンジニアリング</a></li>',
+    '<li id="menu-item-642" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-642"><a href="/techinfo/ss-division/">SIソリューション</a></li>',
+    "</ul>",
+    "</li>",
+    "</ul>",
+    "</li>",
+    '<li id="menu-item-95" class="nav-eco menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-95">',
+    '<a href="/csr/">社会貢献</a>',
+    '<ul class="sub-menu">',
+    '<li id="menu-item-278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-278"><a href="/csr/">社会貢献</a></li>',
+    '<li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="/csr/environment/">環境方針</a></li>',
+    '<li id="menu-item-1153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1153"><a href="/csr/sdgs/">SDGs</a></li>',
+    "</ul>",
+    "</li>",
+    '<li id="menu-item-94" class="nav-jobs menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="/recruit/">採用情報</a></li>',
+    "</ul>",
+    '<div class="drawer-logo"><a href="/" class="custom-logo-link" rel="home">',
+    '<img src="/wp-content/uploads/2021/07/logo-n.svg" class="custom-logo" alt="株式会社マン・マシンインターフェース">',
+    "</a></div>",
+    "</div>",
+    "</nav>",
+    '<div class="pickup-navi">',
+    "<ul>",
+    '<li id="menu-item-100" class="navpick-support menu-item menu-item-type-post_type menu-item-object-page menu-item-100"><a href="https://forms.office.com/r/XypstJFU8R">お問い合わせ</a></li>',
+    "</ul>",
+    "</div>",
+    "</div>",
+    "</header>",
+    '<div id="overlay"></div>',
+    '<div id="content" class="site-content">'
+  );
+}
