@@ -15,7 +15,7 @@
 
 ## 事業領域
 
-当社は3つの事業部門で構成されている。
+当社の主力事業は、以下の2つの事業部門で構成されている。
 
 ### 1. 組込みエンジニアリング (EE Division)
 1985年の創業以来、組込みソフトウェア開発を主軸としてきた中核事業。
@@ -31,11 +31,12 @@
 - 業務システムの設計／開発／運用
 - AWS等のクラウドインフラ構築（AWSパートナー）
 
-### 3. プロダクトソリューション (PS Division)
-自社プロダクトの開発・販売。
-- **DICOM Store SCP for AWS HealthImaging**（AWS Marketplaceにて配布中）
-  - https://aws.amazon.com/marketplace/pp/prodview-a5gbqrjog5eww
-  - 医用画像（DICOM）をAWS HealthImagingへ橋渡しするクラウドゲートウェイ
+## 自社プロダクト
+
+### DICOM Store SCP for AWS HealthImaging
+AWS Marketplaceにて配布中の自社プロダクト。
+- 配布URL: https://aws.amazon.com/marketplace/pp/prodview-a5gbqrjog5eww
+- 概要: 医用画像（DICOM）をAWS HealthImagingへ橋渡しするクラウドゲートウェイ
 
 ## 認証・許認可
 
