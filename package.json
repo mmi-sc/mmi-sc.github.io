@@ -6,6 +6,8 @@
   "scripts": {
     "format": "node scripts/format.mjs",
     "format:check": "node scripts/format.mjs --check",
+    "inject:header": "node scripts/inject-header.mjs",
+    "inject:header:check": "node scripts/inject-header.mjs --check",
     "sitemap:lastmod": "node scripts/update-sitemap-lastmod.mjs",
     "sitemap:lastmod:check": "node scripts/update-sitemap-lastmod.mjs --check"
   },

@@ -25,6 +25,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
+const CHECK = process.argv.includes("--check");
 
 const MARK_START = "<!-- LLMO-HEADER:START -->";
 const MARK_END   = "<!-- LLMO-HEADER:END -->";
@@ -152,18 +153,30 @@ async function processFile(file) {
     return;
   }
 
-  if (changed) {
-    await writeFile(full, html, "utf8");
-    console.log(`[ok]   ${file.path}`);
-  } else {
+  if (!changed) {
     console.log(`[same] ${file.path}`);
+    return false;
+  }
+  if (CHECK) {
+    console.error(`[stale] ${file.path}: 静的ヘッダーが buildHeader() と乖離しています`);
+    return true;
+  }
+  await writeFile(full, html, "utf8");
+  console.log(`[ok]   ${file.path}`);
+  return false;
+}
+
+let stale = false;
+for (const f of FILES) {
+  try {
+    if (await processFile(f)) stale = true;
+  } catch (e) {
+    console.error(`[err]  ${f.path}: ${e.message}`);
+    process.exitCode = 1;
   }
 }
 
-for (const f of FILES) {
-  try {
-    await processFile(f);
-  } catch (e) {
-    console.error(`[err]  ${f.path}: ${e.message}`);
-  }
+if (stale) {
+  console.error("[error] `npm run inject:header` を実行して静的ヘッダーを更新してください。");
+  process.exit(1);
 }
