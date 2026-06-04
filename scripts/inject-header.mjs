@@ -1,26 +1,25 @@
 // 全 index.html に「静的ヘッダーHTML」を埋め込む。冪等。
 //
 // なぜこれが必要か:
-//   common/js/header.js は document.write でロゴ・h1・全ナビゲーションを
-//   生成しているが、AIクローラ（GPTBot, ClaudeBot, PerplexityBot 等）の
-//   多くは JS をほぼ実行しない。結果として、サイト構造の関係グラフが
-//   一切認識されない状態になっている。
+//   かつてはヘッダーを JS（旧 common/js/header.js の document.write）で
+//   生成していたが、AIクローラ（GPTBot, ClaudeBot, PerplexityBot 等）の
+//   多くは JS をほぼ実行しないため、サイト構造の関係グラフが一切認識
+//   されない状態になっていた。
 //
 // 解決策:
 //   各 index.html の <body> 直後（lead-nurture トラッキングスクリプトの後ろ）
-//   に <!-- LLMO-HEADER:START --> 〜 <!-- LLMO-HEADER:END --> マーカーを置き、
-//   このスクリプトでマーカー間を最新のヘッダーHTMLで上書きする。
-//
-//   既存の <script src="/common/js/header.js"></script> と
-//   <script>header(...);</script> はマーカーへ置換（実行されると重複出力に
-//   なるため）。<script src="/common/js/nav-active.js"></script> は残す
+//   にある <!-- LLMO-HEADER:START --> 〜 <!-- LLMO-HEADER:END --> マーカー間を
+//   このスクリプトで最新のヘッダーHTML（buildHeader() が唯一の定義）に
+//   上書きする。<script src="/common/js/nav-active.js"></script> は残す
 //   （location.pathname を見て current-menu-item クラスを付与する役目）。
 //
 // 使い方:
-//   node scripts/inject-header.mjs        # 全 index.html を更新
+//   node scripts/inject-header.mjs          # 全 index.html を更新
+//   node scripts/inject-header.mjs --check  # 乖離があれば exit 1（CI 用）
 //
 // 追加・削除した index.html はこのスクリプト内の FILES に手で追記する
-// （format.mjs と同じ思想で、対象を明示する）。
+// （format.mjs と同じ思想で、対象を明示する）。新規ページには上記の
+// マーカーペアをあらかじめ書いておくこと。
 
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -127,12 +126,6 @@ function buildHeader({ isTop }) {
   ].join("\n");
 }
 
-// 旧 header.js 呼び出しブロックを検出する正規表現。
-// 例: <script src="/common/js/header.js"></script>\n<script>header({ titleTag: "h1" });</script>
-// 　　<script src="/common/js/header.js"></script>\n<script>header();</script>
-const LEGACY_HEADER_RE =
-  /\s*<script src="\/common\/js\/header\.js"><\/script>\s*<script>\s*header\([^)]*\);?\s*<\/script>/;
-
 // マーカー間置換用
 const MARKER_BLOCK_RE = new RegExp(
   MARK_START.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&") +
@@ -148,18 +141,14 @@ async function processFile(file) {
   let changed = false;
 
   if (MARKER_BLOCK_RE.test(html)) {
-    // 2回目以降: マーカー間を上書き
+    // マーカー間を上書き
     const next = html.replace(MARKER_BLOCK_RE, header);
     if (next !== html) {
       html = next;
       changed = true;
     }
-  } else if (LEGACY_HEADER_RE.test(html)) {
-    // 初回: 旧 header.js 呼び出しを丸ごと差し替え
-    html = html.replace(LEGACY_HEADER_RE, "\n  " + header);
-    changed = true;
   } else {
-    console.warn(`[skip] ${file.path}: マーカーも旧header.js呼び出しも見つかりません`);
+    console.warn(`[skip] ${file.path}: マーカーが見つかりません`);
     return;
   }
 
