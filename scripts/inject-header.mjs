@@ -23,9 +23,30 @@
 
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const jsbeautify = require("js-beautify");
 
 const ROOT = process.cwd();
 const CHECK = process.argv.includes("--check");
+
+// format.mjs と同じ .jsbeautifyrc の HTML 設定で整形する。
+// 注入後に整形を通すことで、format.mjs と inject-header.mjs の
+// どちらを先に実行しても結果が一致する（衝突しない）。
+const rc = JSON.parse(await readFile(join(ROOT, ".jsbeautifyrc"), "utf8"));
+const HTML_CFG = (() => {
+  const base = { ...rc };
+  delete base.html;
+  delete base.css;
+  delete base.js;
+  return { ...base, ...(rc.html || {}) };
+})();
+
+function beautifyHtml(src) {
+  const out = jsbeautify.html(src, HTML_CFG);
+  return out.endsWith("\n") ? out : out + "\n";
+}
 
 const MARK_START = "<!-- LLMO-HEADER:START -->";
 const MARK_END   = "<!-- LLMO-HEADER:END -->";
@@ -139,19 +160,15 @@ async function processFile(file) {
   let html = await readFile(full, "utf8");
   const header = buildHeader({ isTop: file.isTop });
 
-  let changed = false;
-
-  if (MARKER_BLOCK_RE.test(html)) {
-    // マーカー間を上書き
-    const next = html.replace(MARKER_BLOCK_RE, header);
-    if (next !== html) {
-      html = next;
-      changed = true;
-    }
-  } else {
+  if (!MARKER_BLOCK_RE.test(html)) {
     console.warn(`[skip] ${file.path}: マーカーが見つかりません`);
-    return;
+    return false;
   }
+
+  // マーカー間を上書きし、format.mjs と同じ設定で整形してから比較する
+  const next = beautifyHtml(html.replace(MARKER_BLOCK_RE, header));
+  const changed = next !== html;
+  html = next;
 
   if (!changed) {
     console.log(`[same] ${file.path}`);
