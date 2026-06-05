@@ -1,0 +1,74 @@
+# robots.txt for https://www.mmi-sc.co.jp/
+# 参考: https://www.robotstxt.org/robotstxt.html
+
+# ---------------------------------------------------------------
+# 全クローラ（既定）
+# 注意: /wp-includes/ や /wp-content/plugins/ を Disallow すると、
+# head-common.js が読み込む CSS/JS（jQuery, Elementor 等）の取得が
+# ブロックされ、Googlebot 等のレンダリングが壊れるため許可のままとする。
+# ---------------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+
+# ---------------------------------------------------------------
+# AIクローラ／LLM学習向け
+# 方針：全AIクローラを許可（案A）。生成AI検索への引用獲得を最大化する。
+# 学習利用を拒否する場合は当該 User-agent を Disallow: / に変更すること。
+# 注意: robots.txt の仕様上、名前付き User-agent は自分のブロックだけを
+# 参照し「User-agent: *」の Disallow を引き継がない。下記のボットに
+# 既定の制限を適用したい場合は、各ブロックに Disallow を明示すること。
+# ---------------------------------------------------------------
+
+# OpenAI（ChatGPT 検索/引用クロール）
+User-agent: GPTBot
+Allow: /
+
+# OpenAI（ChatGPT ユーザーがリンクを踏んだ時のフェッチ）
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI（ユーザー操作起点の即時取得）
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude（検索/引用クロール）
+User-agent: ClaudeBot
+Allow: /
+
+# Anthropic Claude（ユーザー操作起点の即時取得）
+User-agent: Claude-User
+Allow: /
+
+# Anthropic（旧UA）
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity（ユーザー操作起点）
+User-agent: Perplexity-User
+Allow: /
+
+# Google（Gemini / AI Overviews 学習用の追加制御）
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Bytedance / 豆包
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl（多数のLLM学習データセットの一次ソース）
+User-agent: CCBot
+Allow: /
+
+# ---------------------------------------------------------------
+# サイトマップ
+# ---------------------------------------------------------------
+Sitemap: https://www.mmi-sc.co.jp/sitemap.xml

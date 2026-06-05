@@ -1,0 +1,94 @@
+# 株式会社マン・マシンインターフェース (MAN MACHINE INTERFACE, INC.)
+
+> 1985年設立、東京都八王子市に本社を構えるソフトウェア開発会社。組込みソフトウェアを主軸に、SIソリューション、AWSを活用したクラウドインフラ構築まで幅広く手がける。AWSパートナー認定／ISO/IEC 27001取得／医療機器製造業許可保有。従業員69名（2026年5月時点）。
+
+## 会社概要
+
+- **正式名称**: 株式会社マン・マシンインターフェース（MAN MACHINE INTERFACE, INC.）
+- **設立**: 1985年（昭和60年）12月7日
+- **所在地**: 〒192-0081 東京都八王子市横山町6番9号 丸多屋ビル3F
+- **代表者**: 代表取締役 関口 哲也
+- **従業員数**: 69名（2026年5月時点）
+- **資本金**: 1,000万円
+- **事業内容**: ソフトウェア受託開発およびインフラ構築
+- **公式サイト**: https://www.mmi-sc.co.jp/
+
+## 事業領域
+
+当社の主力事業は、以下の2つの事業部門で構成されている。
+
+### 1. 組込みエンジニアリング (EE Division)
+1985年の設立以来、組込みソフトウェア開発を主軸としてきた中核事業。
+- 電子内視鏡のファームウェア／アプリケーション開発／ソフトウェアテスト
+- 車載ECU（Electronic Control Unit）開発
+- カーナビ／運転支援機器開発
+- ホームオーディオ開発
+- CAD（Computer Aided Design）
+- 障害者支援ロボットのファームウェア
+
+### 2. SIソリューション (SS Division)
+2020年から本格展開している事業。
+- 業務システムの設計／開発／運用
+- AWS等のクラウドインフラ構築（AWSパートナー）
+
+## 自社プロダクト
+
+### DICOM Store SCP for AWS HealthImaging
+AWS Marketplaceにて配布中の自社プロダクト。
+- 配布URL: https://aws.amazon.com/marketplace/pp/prodview-a5gbqrjog5eww
+- 概要: Serverless DICOM SCP for AWS HealthImaging with secure C-STORE ingestion
+
+## 認証・許認可
+
+- ISO/IEC 27001:2013（情報セキュリティマネジメント） JQA-IM1701
+- エコアクション21 第0009272号
+- 医療機器製造業許可 13BZ201883
+- 労働者派遣事業許可 派13-310289
+
+## 主要ページ
+
+### 会社情報
+- [会社概要](https://www.mmi-sc.co.jp/about/outline/): 社長挨拶、社名、所在地、設立、資本金、役員、従業員数、取引先、許認可など
+- [企業方針](https://www.mmi-sc.co.jp/about/principle/): 経営理念と行動指針
+- [沿革](https://www.mmi-sc.co.jp/about/history/): 1985年の設立から現在までの歴史
+- [アクセス](https://www.mmi-sc.co.jp/about/access/): 八王子本社への交通案内
+- [公開情報](https://www.mmi-sc.co.jp/about/lduinfo/): 労働者派遣事業に関する公開情報
+
+### 技術情報
+- [技術情報トップ](https://www.mmi-sc.co.jp/techinfo/): 全事業の開発実績概観
+- [組込みエンジニアリング](https://www.mmi-sc.co.jp/techinfo/ee-division/): EE事業部の業務内容と実績
+- [SIソリューション](https://www.mmi-sc.co.jp/techinfo/ss-division/): SI事業部の業務内容と実績
+
+### 社会貢献
+- [社会貢献トップ](https://www.mmi-sc.co.jp/csr/): CSR活動全般
+- [環境方針](https://www.mmi-sc.co.jp/csr/environment/): 環境マネジメントへの取り組み
+- [SDGs](https://www.mmi-sc.co.jp/csr/sdgs/): SDGsへの貢献活動
+
+### 採用
+- [採用情報](https://www.mmi-sc.co.jp/recruit/): 新卒採用（2026年度活動中、マイナビ経由）、キャリア採用
+
+## 主要取引先（抜粋）
+
+- 株式会社IHIジェットサービス
+- イーソル株式会社
+- エイデイケイ富士システム株式会社
+- ソニーマーケティング株式会社
+- 東芝情報システム株式会社
+- 東芝ユニファイドテクノロジーズ株式会社
+- 株式会社日立産業制御ソリューションズ
+- 富士アイティ株式会社
+- 株式会社ブライセン
+- HOYA株式会社  ほか
+
+## 加盟団体
+
+- サイバーシルクロード八王子
+- 八王子IT協同組合
+- 一般社団法人 東京中小企業家同友会
+- 都産技研サービスロボット事業化交流会
+- NPO法人ロボットビジネス支援機構（RobiZy）
+- 日本ベトナムITビジネス推進協会
+
+## お問い合わせ
+
+- お問い合わせフォーム: https://forms.office.com/r/XypstJFU8R

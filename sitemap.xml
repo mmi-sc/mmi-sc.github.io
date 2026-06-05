@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XMLサイトマップ
+  <lastmod> は scripts/update-sitemap-lastmod.mjs で各ページの
+  git 最終コミット日から自動更新する（npm run sitemap:lastmod）。
+  手動では編集しないこと。
+  ※ changefreq / priority は主要検索エンジンが無視するため記載しない。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップ -->
+  <url>
+    <loc>https://www.mmi-sc.co.jp/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+
+  <!-- 企業情報 -->
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/outline/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/principle/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/history/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/access/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/lduinfo/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/about/privacy/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+
+  <!-- 技術情報 -->
+  <url>
+    <loc>https://www.mmi-sc.co.jp/techinfo/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/techinfo/ee-division/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/techinfo/ss-division/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <!-- /techinfo/ps-division/ は現状トップへのリダイレクトのみのため除外 -->
+
+  <!-- 社会貢献 -->
+  <url>
+    <loc>https://www.mmi-sc.co.jp/csr/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/csr/environment/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mmi-sc.co.jp/csr/sdgs/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+
+  <!-- 採用 -->
+  <url>
+    <loc>https://www.mmi-sc.co.jp/recruit/</loc>
+    <lastmod>2026-06-04</lastmod>
+  </url>
+
+</urlset>

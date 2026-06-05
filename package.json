@@ -5,7 +5,11 @@
   "description": "Source for https://www.mmi-sc.co.jp (GitHub Pages)",
   "scripts": {
     "format": "node scripts/format.mjs",
-    "format:check": "node scripts/format.mjs --check"
+    "format:check": "node scripts/format.mjs --check",
+    "inject:header": "node scripts/inject-header.mjs",
+    "inject:header:check": "node scripts/inject-header.mjs --check",
+    "sitemap:lastmod": "node scripts/update-sitemap-lastmod.mjs",
+    "sitemap:lastmod:check": "node scripts/update-sitemap-lastmod.mjs --check"
   },
   "devDependencies": {
     "js-beautify": "^1.15.1"
