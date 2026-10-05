@@ -51,7 +51,7 @@ AWS Marketplaceにて配布中の自社プロダクト。
 - [会社概要](https://www.mmi-sc.co.jp/about/outline/): 社長挨拶、社名、所在地、設立、資本金、役員、従業員数、取引先、許認可など
 - [企業方針](https://www.mmi-sc.co.jp/about/principle/): 経営理念と行動指針
 - [沿革](https://www.mmi-sc.co.jp/about/history/): 1985年の設立から現在までの歴史
-- [アクセス](https://www.mmi-sc.co.jp/about/access/): 八王子本社への交通案内
+- [アクセス](https://www.mmi-sc.co.jp/about/access/): 本社（八王子）・麹町・佐賀・フィリピン各拠点の所在地と交通案内
 - [公開情報](https://www.mmi-sc.co.jp/about/lduinfo/): 労働者派遣事業に関する公開情報
 
 ### 技術情報
@@ -78,7 +78,7 @@ AWS Marketplaceにて配布中の自社プロダクト。
 - 株式会社日立産業制御ソリューションズ
 - 富士アイティ株式会社
 - 株式会社ブライセン
-- HOYA株式会社  ほか
+- PENTAX Medical合同会社  ほか
 
 ## 加盟団体
 
