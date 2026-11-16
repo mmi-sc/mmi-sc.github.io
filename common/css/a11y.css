@@ -1,0 +1,72 @@
+/* アクセシビリティ対応の共通スタイル（全ページ）
+ *
+ * head-common.js でテーマ CSS の後ろに読み込み、テーマ側の指定を上書きする。
+ */
+
+/* ---- キーボード操作時のフォーカス表示 ----
+ * テーマの `a:focus, *:focus { outline: none; }` で消えている枠を、
+ * キーボード操作時（:focus-visible）だけ表示する。マウス操作の見た目は変わらない。
+ * テーマの a:focus / input:focus と同じ詳細度にするため html を前に付けている（後に読むこちらが勝つ）。 */
+html *:focus-visible {
+  outline: 3px solid #3288cc;
+  outline-offset: 2px;
+}
+
+/* ---- ヘッダーのサブメニューをキーボードでも開く ----
+ * テーマはマウスを乗せたとき（.open）だけ開くため、フォーカスが入ったときも同じ表示にする。 */
+.menu-item-has-children:focus-within>ul.sub-menu,
+.menu-item-has-children:focus-within>ul.sub-menu li ul.sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- スマホ用メニューボタン（<button> 化に伴う既定スタイルの打ち消し） ---- */
+button.nav-button-wrap {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* 閉じているドロワーメニューは画面外にあるだけでフォーカスが入るため、非表示にする */
+  #navi {
+    visibility: hidden;
+  }
+
+  #navi.open {
+    visibility: visible;
+  }
+}
+
+/* ---- スクロール表示アニメーション前の要素 ----
+ * テーマは visibility: hidden で隠しているため、表示前の内容が読み上げソフトや
+ * ページ内検索から見えない。見た目は同じまま opacity で隠す方式に変える。 */
+.invisible {
+  visibility: visible;
+  opacity: 0;
+}
+
+/* 隠れている要素にキーボードでフォーカスが入ったら表示する */
+.invisible:focus-within {
+  opacity: 1;
+}
+
+/* ---- 動きを減らす設定の利用者 ----
+ * スクロール表示アニメーション・キャラクターの跳ねる動きを止め、最初から表示する。 */
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    animation: none !important;
+  }
+
+  .invisible {
+    opacity: 1;
+  }
+}
+
+/* ---- フッターのコピーライト表記のコントラスト ----
+ * テーマの #ccc（白背景で 1.6:1）を、基準の 4.5:1 以上になる色にする。 */
+.site-info,
+.site-info a {
+  color: #6b6b6b;
+}

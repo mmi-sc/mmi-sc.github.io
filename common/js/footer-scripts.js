@@ -19,6 +19,8 @@
     // jQuery 3.6.0 は <head> で /wp-includes/js/jquery/jquery.min.js を
     // 同じバージョンでローカル読み込み済みなので、CDN 版は重複につき省略。
     '<scr' + 'ipt type="text/javascript" src="/wp-content/themes/mmi/js/common.js?210817-0607"></scr' + 'ipt>',
+    // アクセシビリティ対応（メニューボタンの aria-expanded・新しいタブの読み上げ）。common.js の後に置く
+    '<scr' + 'ipt type="text/javascript" src="/common/js/a11y.js"></scr' + 'ipt>',
     '<scr' + 'ipt type="text/javascript" src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" id="regenerator-runtime-js"></scr' + 'ipt>',
     '<scr' + 'ipt type="text/javascript" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></scr' + 'ipt>',
     '<scr' + 'ipt type="text/javascript" id="contact-form-7-js-extra">',

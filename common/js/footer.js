@@ -2,7 +2,7 @@ function footer() {
 
   document.write(
     '<footer id="colophon" class="site-footer"><div class="footer-head-wrap animated invisible" data-animate="fadeInUp">',
-    '        <a href="/" rel="home" class="footer-logo pos-ab-c"></a>',
+    '        <a href="/" rel="home" class="footer-logo pos-ab-c" aria-label="株式会社マン・マシンインターフェース トップページへ"></a>',
     '    </div>',
     '    <div class="footer-nav-wrap">',
     '    <ul class="footer-nav">',

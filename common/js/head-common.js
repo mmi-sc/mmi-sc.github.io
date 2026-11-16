@@ -58,6 +58,8 @@ function headCommon(opts) {
     '<link rel="stylesheet" type="text/css" href="/wp-content/themes/mmi/css/animate.min.css">',
     '<link rel="preconnect" href="https://fonts.gstatic.com/">',
     '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500&display=swap" rel="stylesheet">',
+    // アクセシビリティ対応。テーマ CSS・animate.min.css を上書きするため、それらより後に置く
+    '<link rel="stylesheet" type="text/css" href="/common/css/a11y.css">',
     '<scr' + 'ipt type="text/javascript" src="/common/js/footer.js"></scr' + 'ipt>'
   );
 
