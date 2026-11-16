@@ -69,6 +69,7 @@ const FILES = [
   { path: "csr/environment/index.html",       isTop: false },
   { path: "csr/sdgs/index.html",              isTop: false },
   { path: "recruit/index.html",               isTop: false },
+  { path: "recruit/faq/index.html",           isTop: false },
 ];
 
 function buildHeader({ isTop }) {
